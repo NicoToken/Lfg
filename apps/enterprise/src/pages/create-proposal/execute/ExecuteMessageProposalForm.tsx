@@ -7,12 +7,38 @@ import { validateWasmMsg } from './helpers/validateWasmMsg';
 import styles from './ExecuteMessageProposalForm.module.sass';
 import { AddButton } from 'components/add-button';
 import { DeleteIconButton } from 'components/delete-icon-button';
+import { useQuery } from 'react-query';
+import { useLCDClient } from '@terra-money/wallet-provider';
+import { useCurrentDao } from 'dao/components/CurrentDaoProvider';
+import { MsgExecuteContract } from '@terra-money/terra.js';
 
 export const ExecuteMessageProposalForm = () => {
   const [messages, setMessages] = useState<string[]>(['']);
+  const { address } = useCurrentDao()
 
   const messagesErrors = useMemo(() => messages.map(validateWasmMsg), [messages]);
   const areMessagesValid = useMemo(() => messagesErrors.every((e) => !e), [messagesErrors]);
+
+  const client = useLCDClient();
+
+  const errors = useQuery(['executeMessageErrors', messages], () => {
+    return Promise.all(messages.map(async message => {
+      const error = validateWasmMsg(message);
+      if (error) {
+        return error
+      }
+
+      console.log(JSON.parse(message))
+
+      const transaction = await client.tx.create([{ address }], {
+        msgs: [JSON.parse(message)]
+      });
+
+      console.log(transaction)
+
+      return undefined
+    }))
+  })
 
   const submitDisabled = !areMessagesValid;
 
