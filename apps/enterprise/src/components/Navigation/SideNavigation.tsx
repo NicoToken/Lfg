@@ -52,6 +52,13 @@ export const SideNavigation = () => {
             </ExternalLink>
           </div>
         </Tooltip>
+        {connectedWallet && (
+          <Tooltip title="Create a DAO" placement="right" arrow={true}>
+            <div>
+              <CreateDaoButton />
+            </div>
+          </Tooltip>
+        )}
       </VStack>
     </Container>
   );

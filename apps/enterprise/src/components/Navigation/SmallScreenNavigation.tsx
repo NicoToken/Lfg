@@ -46,6 +46,7 @@ export const SmallScreenNavigation = ({ children }: ComponentWithChildrenProps) 
           <DashboardButton />
           <ManageDaosButton />
         </HStack>
+        <CreateDaoButton />
       </Footer>
     </Container>
   );
