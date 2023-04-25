@@ -126,14 +126,6 @@ const AppBetaRoutes = () => {
           }
         />
         <Route
-          path="/dao/create"
-          element={
-            <InitizalizedWalletOnly>
-              <CreateDAOPage />
-            </InitizalizedWalletOnly>
-          }
-        />
-        <Route
           path="/dao/:address/proposals/:id"
           element={
             <InitizalizedWalletOnly>
