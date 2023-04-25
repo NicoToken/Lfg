@@ -1,15 +1,17 @@
 import { HStack } from "lib/ui/Stack";
 import { Text } from "lib/ui/Text";
 import { toCosmosMsg } from "./helpers/toCosmosMsg";
-import { useAssertMyAddress } from "chain/hooks/useAssertMyAddress";
 import { ExecuteMessageFee } from "./ExecuteMessageFee";
+import { useCurrentDao } from "dao/components/CurrentDaoProvider";
 
 interface Props {
   value: string
 }
 
 export const ExecuteMessageInfo = ({ value }: Props) => {
-  const address = useAssertMyAddress()
+  // const address = useAssertMyAddress()
+  const { address } = useCurrentDao()
+
   let msg = undefined
   let err = undefined
   try {

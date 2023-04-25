@@ -13,17 +13,6 @@ export const toCosmosMsg = ({ sender, msg }: ToCosmosMsgParams): Msg | undefined
   if (cosmosMsg?.wasm?.execute) {
     const { contract_addr, msg, funds } = cosmosMsg.wasm.execute
 
-    console.log(sender, contract_addr, fromBase64(msg), funds)
     return new MsgExecuteContract(sender, contract_addr, fromBase64(msg), funds)
-
-    // return MsgExecuteContract.fromData({
-    //   '@type': '/cosmwasm.wasm.v1.MsgExecuteContract',
-    //   sender,
-    //   contract: contract_addr,
-    //   msg: fromBase64(msg),
-    //   funds
-    // })
   }
-
-  return
 }
