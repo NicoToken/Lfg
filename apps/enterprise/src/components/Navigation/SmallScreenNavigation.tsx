@@ -44,11 +44,7 @@ export const SmallScreenNavigation = ({ children }: ComponentWithChildrenProps) 
       <ContentWr>{children}</ContentWr>
       <Footer alignItems="center" justifyContent="space-between">
         <HStack gap={16}>
-          <DashboardButton />
-          <ManageDaosButton />
-          <SettingsNavigationItem />
         </HStack>
-        <CreateDaoButton />
       </Footer>
     </Container>
   );
