@@ -46,7 +46,6 @@ export const Header = forwardRef((props: HeaderProps, ref: Ref<HTMLDivElement>) 
         <Container className={styles.container}>
           <InternalLink to={Path.Daos}>
             <Text className={styles.back} variant="link">
-              Back
             </Text>
           </InternalLink>
           <div className={styles.logo}>
