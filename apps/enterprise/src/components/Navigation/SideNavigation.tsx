@@ -27,7 +27,6 @@ export const SideNavigation = () => {
     <Container fullHeight justifyContent="space-between">
       <VStack alignItems="center" gap={48}>
         <InternalLink to={Path.Landing}>
-          <Logo compact />
         </InternalLink>
         <VStack gap={12}>
           <Tooltip title="Dashboard" placement="right" arrow={true}>
@@ -46,7 +45,6 @@ export const SideNavigation = () => {
           <div>
             <ExternalLink to="https://terra.sc/enterprisefeedback">
               <IconButton variant="outline">
-                <ChatIcon />
               </IconButton>
             </ExternalLink>
           </div>
