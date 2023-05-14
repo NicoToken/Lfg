@@ -7,7 +7,6 @@ export const DashboardButton = () => {
   return (
     <InternalLink to={Path.Dashboard}>
       <IconButton>
-        <HomeIcon />
       </IconButton>
     </InternalLink>
   );

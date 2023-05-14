@@ -32,12 +32,10 @@ export const SideNavigation = () => {
         <VStack gap={12}>
           <Tooltip title="Dashboard" placement="right" arrow={true}>
             <div>
-              <DashboardButton />
             </div>
           </Tooltip>
           <Tooltip title="Manage your favourite DAOs" placement="right" arrow={true}>
             <div>
-              <ManageDaosButton />
             </div>
           </Tooltip>
           <Favourites />
@@ -53,11 +51,9 @@ export const SideNavigation = () => {
             </ExternalLink>
           </div>
         </Tooltip>
-        <SettingsNavigationItem />
         {connectedWallet && (
           <Tooltip title="Create a DAO" placement="right" arrow={true}>
             <div>
-              <CreateDaoButton />
             </div>
           </Tooltip>
         )}
