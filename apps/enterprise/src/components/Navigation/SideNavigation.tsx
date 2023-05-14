@@ -29,31 +29,19 @@ export const SideNavigation = () => {
         <InternalLink to={Path.Landing}>
         </InternalLink>
         <VStack gap={12}>
-          <Tooltip title="Dashboard" placement="right" arrow={true}>
             <div>
             </div>
-          </Tooltip>
-          <Tooltip title="Manage your favourite DAOs" placement="right" arrow={true}>
             <div>
             </div>
-          </Tooltip>
           <Favourites />
         </VStack>
       </VStack>
       <VStack gap={24} alignItems="center">
-        <Tooltip title="Got feedback?" placement="right" arrow={true}>
           <div>
-            <ExternalLink to="https://terra.sc/enterprisefeedback">
-              <IconButton variant="outline">
-              </IconButton>
-            </ExternalLink>
           </div>
-        </Tooltip>
         {connectedWallet && (
-          <Tooltip title="Create a DAO" placement="right" arrow={true}>
             <div>
             </div>
-          </Tooltip>
         )}
       </VStack>
     </Container>
